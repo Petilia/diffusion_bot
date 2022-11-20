@@ -1,0 +1,8 @@
+diffusion_bot/.cache
+diffusion_bot/.gnupg
+diffusion_bot/.huggingface
+diffusion_bot/.nv
+diffusion_bot/.ssh
+diffusion_bot/.vscode-server
+diffusion_bot/.bash_history
+diffusion_bot/.gitconfig
