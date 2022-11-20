@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  diffusion-bot:
+    build: ./diffusion_bot
+    command: python3 bot.py
+    volumes:
+      - /media/cds-k/Elements/diffusion_bot_cache:/home/docker_current/.cache/huggingface:rw
+      - ./diffusion_bot/bot.py:/home/docker_current/bot.py
+      - ./diffusion_bot/check_redis.py:/home/docker_current/check_redis.py
+    runtime: nvidia
+    depends_on:
+      - redis
+    networks:
+      - diffusion-bot-network
+
+  redis:
+    build: ./redis
+    volumes:
+      - redis_data:/data
+    environment:
+      REDIS_PASSWORD: "password"
+    ports:
+      - "6379:6379"
+    networks:
+      - diffusion-bot-network
+
+volumes:
+  redis_data:
+
+networks:
+  diffusion-bot-network:
+ 
+  

@@ -15,7 +15,7 @@ desktop_start() {
         --privileged \
         --name diffusion_bot \
         -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-        -v $workspace_dir:/home/docker_current:rw \
+        -v $workspace_dir:/home/docker_current/py_files:rw \
         -v /media/cds-k/Elements/diffusion_bot_cache:/home/docker_current/.cache/huggingface:rw \
         ${ARCH}/diffusion_bot:latest
     xhost -

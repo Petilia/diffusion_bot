@@ -15,3 +15,6 @@ accelerate
 
 #tg bot req
 pyTelegramBotAPI
+
+#database
+redis

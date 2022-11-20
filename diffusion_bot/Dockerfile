@@ -13,6 +13,9 @@ RUN python -m pip install --upgrade --force pip
 COPY requirements.txt . 
 RUN pip install -r requirements.txt
 
+RUN apt-get update && apt-get install -y telnet
+RUN pip install python-dotenv
+
 #### ADD USER WITH DEFAULT PW
 ARG USER=docker_current
 ARG UID=1000
@@ -21,5 +24,6 @@ ARG PW=user
 
 RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd && adduser ${USER} sudo
 WORKDIR /home/${USER}
+COPY . . 
 RUN chown -R ${UID}:${GID} /home/${USER}
 USER ${UID}:${GID}
