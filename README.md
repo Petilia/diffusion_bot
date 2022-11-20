@@ -13,8 +13,8 @@ You need to register at https://huggingface.co/ and get an API token
 ## Creating .env file ##
 You need to create an .env file in the diffusion_bot directory:
 ```
-HF_TOKEN="your_huggingface_api_token"
-TG_TOKEN="your_telegram_api_token"
+HF_TOKEN=your_huggingface_api_token
+TG_TOKEN=your_telegram_api_token
 MODEL_DATA=runwayml/stable-diffusion-v1-5
 LOW_VRAM_MODE=true
 USE_AUTH_TOKEN=true
