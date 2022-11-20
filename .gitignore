@@ -6,3 +6,4 @@ diffusion_bot/.ssh
 diffusion_bot/.vscode-server
 diffusion_bot/.bash_history
 diffusion_bot/.gitconfig
+diffusion_bot/.env
