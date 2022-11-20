@@ -1,6 +1,7 @@
 import telebot
 import os
 import torch
+import redis
 from diffusers import StableDiffusionPipeline
 from huggingface_hub.hf_api import HfFolder
 from dotenv import load_dotenv
@@ -15,8 +16,15 @@ USE_AUTH_TOKEN = (os.getenv('USE_AUTH_TOKEN', 'true').lower() == 'true')
 # load the text2img pipeline
 revision = "fp16" if LOW_VRAM_MODE else None
 torch_dtype = torch.float16 if LOW_VRAM_MODE else None
-pipe = StableDiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
+pipe = StableDiffusionPipeline.from_pretrained(MODEL_DATA, revision=revision, 
+                                                torch_dtype=torch_dtype, use_auth_token=USE_AUTH_TOKEN)
 pipe = pipe.to("cuda")
+
+#redis 
+r = redis.Redis(
+    host="redis", 
+    password="password"
+)
 
 bot=telebot.TeleBot(os.getenv("TG_TOKEN"))
 
