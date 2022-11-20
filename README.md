@@ -3,6 +3,9 @@
 ## Description ##
 Presented Telegram bot for generating pictures by text query. Stable Diffusion is used as the generation model.
 
+## Hardware requirements ##
+It is necessary to have about 4 GB of VRAM
+
 ## Receiving a tokens ##
 You need to write to the bot https://t.me/BotFather, create your own bot and get the API token.  
 You need to register at https://huggingface.co/ and get an API token
