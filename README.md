@@ -17,7 +17,6 @@ LOW_VRAM_MODE=true
 USE_AUTH_TOKEN=true
 INFERENCE_DEVICE=cuda
 ```
-You can change INFERENCE_DEVICE to cpu if you do not have gpu
 
 ## Building ##
 At the root of the repository, run the commands:
