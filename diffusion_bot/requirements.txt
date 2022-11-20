@@ -15,6 +15,7 @@ accelerate
 
 #tg bot req
 pyTelegramBotAPI
+python-dotenv
 
 #database
 redis
