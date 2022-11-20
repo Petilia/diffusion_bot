@@ -1,4 +1,4 @@
-<p align="center"><img width="80%" src="assets/1.gif"/></p>
+<p align="center"><img src="assets/1.gif"/></p>
 
 ## Description ##
 Presented Telegram bot for generating pictures by text query. Stable Diffusion is used as the generation model.
