@@ -6,8 +6,6 @@ services:
     command: python3 bot.py
     volumes:
       - /media/cds-k/Elements/diffusion_bot_cache:/home/docker_current/.cache/huggingface:rw
-      - ./diffusion_bot/bot.py:/home/docker_current/bot.py
-      - ./diffusion_bot/check_redis.py:/home/docker_current/check_redis.py
     runtime: nvidia
     depends_on:
       - redis
